@@ -33,7 +33,7 @@ def ToRify():
 class TanahSpider(scrapy.Spider):
     name = "bukalapak"
     start_urls = ["https://www.bukalapak.com/products?utf8=&source=navbar&from=omnisearch&page=&search_source=omnisearch_organic"]
-    currentpage = 1518
+    currentpage = 1
     def parse(self,response):
         x = 0
         ToRify()
@@ -49,10 +49,9 @@ class TanahSpider(scrapy.Spider):
             #'Jumlah review': response.css('a.review__aggregate span::text').extract()[x], #total review         
             }
             x=x+1
-        #page = 3
+        
         time.sleep(randint(3,15))
-        #next_page = response.css('a.ajax::attr(href)').extract()[page]
-        #page = page+1
+        
         page = self.currentpage + 1
         next_page= "https://www.bukalapak.com/products?utf8=&source=navbar&from=omnisearch&page=%s&search_source=omnisearch_organic" % page
         if response.css('li.product--sem') is not None:
