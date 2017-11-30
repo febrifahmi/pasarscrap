@@ -30,7 +30,7 @@ def ToRify():
     print "ToRify Using IP Address: " + currentip
     print "=================="
 
-class TanahSpider(scrapy.Spider):
+class LapakSpider(scrapy.Spider):
     name = "bukalapak"
     start_urls = ["https://www.bukalapak.com/products?utf8=&source=navbar&from=omnisearch&page=&search_source=omnisearch_organic"]
     currentpage = 1
